@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { img } from "@/lib/images";
+import { altFor } from "@/lib/altText";
 
 const quickLinks = [
   { href: "/", label: "Home" },
@@ -28,9 +29,9 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="hover:text-terracotta"
+                className="hover:text-teal-dark"
               >
-                <svg viewBox="0 0 512 512" className="h-6 w-6" fill="currentColor">
+                <svg viewBox="0 0 512 512" className="h-6 w-6" fill="currentColor" aria-hidden="true" focusable="false">
                   <path d="M338,54.63H174c-62.72,0-114,51.32-114,114V343.33c0,62.72,51.32,114,114,114H338c62.72,0,114-51.32,114-114V168.67C452,105.94,400.68,54.63,338,54.63Zm83.91,288.71A84.24,84.24,0,0,1,338,427.24H174a84.24,84.24,0,0,1-83.91-83.91V168.67A84.24,84.24,0,0,1,174,84.76H338a84.24,84.24,0,0,1,83.91,83.91Z" />
                   <path d="M255.77,148.18A107.94,107.94,0,1,0,363.71,256.13,107.94,107.94,0,0,0,255.77,148.18Zm-.52,178.71a70.68,70.68,0,1,1,70.68-70.68A70.68,70.68,0,0,1,255.25,326.9Z" />
                   <circle cx="365.44" cy="146.5" r="25.56" />
@@ -41,23 +42,23 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="hover:text-terracotta"
+                className="hover:text-teal-dark"
               >
-                <svg viewBox="0 0 512 512" className="h-6 w-6" fill="currentColor">
+                <svg viewBox="0 0 512 512" className="h-6 w-6" fill="currentColor" aria-hidden="true" focusable="false">
                   <path d="M288 192v-38.1c0-17.2 3.8-25.9 30.5-25.9H352V64h-55.9c-68.5 0-91.1 31.4-91.1 85.3V192h-45v64h45v192h83V256h56.4l7.6-64h-64z" />
                 </svg>
               </a>
             </div>
 
             <div className="border-l-2 border-terracotta/50 pl-4">
-              <p className="text-sm font-semibold tracking-widest text-ink/60 uppercase">
+              <p className="text-sm font-semibold tracking-widest text-ink/70 uppercase">
                 Follow Along
               </p>
               <a
                 href="https://www.instagram.com/xtendyourself/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-lg font-semibold tracking-wide uppercase hover:text-terracotta"
+                className="text-lg font-semibold tracking-wide uppercase hover:text-teal-dark"
               >
                 @xtendyourself
               </a>
@@ -75,7 +76,7 @@ export default function Footer() {
           <div className="grid grid-cols-3 gap-2 sm:gap-3">
             {galleryShots.map((f) => (
               <div key={f} className="relative aspect-[3/4] overflow-hidden">
-                <Image src={img(f)} alt="" fill sizes="(min-width: 1024px) 24vw, 33vw" className="object-cover" />
+                <Image src={img(f)} alt={altFor(f)} fill sizes="(min-width: 1024px) 24vw, 33vw" className="object-cover" />
               </div>
             ))}
           </div>
@@ -111,13 +112,24 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10">
-          <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-5 text-sm text-cream-light/60 sm:flex-row sm:items-center sm:justify-between lg:px-10">
+          <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-5 text-sm text-cream-light/85 sm:flex-row sm:items-center sm:justify-between lg:px-10">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+              <a href="tel:+14802079996" data-event="call_click" className="hover:text-white">
+                Call 480-207-9996
+              </a>
+              <span aria-hidden className="text-cream-light/60">
+                /
+              </span>
+              <a href="sms:+15168166452" data-event="sms_click" className="hover:text-white">
+                Text 516-816-6452
+              </a>
+            </div>
             <p>&copy; {new Date().getFullYear()} Xtend Yourself Salon. All rights reserved.</p>
             <div className="flex gap-4">
               <Link href="/privacy-policy" className="hover:text-white">
                 Privacy Policy
               </Link>
-              <Link href="/terms-and-consitions" className="hover:text-white">
+              <Link href="/terms-and-conditions" className="hover:text-white">
                 Terms &amp; Conditions
               </Link>
             </div>

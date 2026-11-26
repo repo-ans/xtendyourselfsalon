@@ -1,14 +1,27 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { img } from "@/lib/images";
+import { altFor } from "@/lib/altText";
 import ServicesPreview from "@/components/ServicesPreview";
 import CtaBand from "@/components/CtaBand";
 
-export const metadata = {
-  title: "Hair Restoration & Extension Portfolio | Cave Creek AZ",
-  description:
-    "Real transformations, beautiful results. See the real work, real results, and happy clients who trust Xtend Yourself with their hair.",
+const title = "Hair Restoration & Extension Portfolio | Cave Creek AZ";
+const description =
+  "Real transformations, beautiful results. See the real work, real results, and happy clients who trust Xtend Yourself with their hair.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/portfolio" },
+  openGraph: { title, description, url: "/portfolio", type: "website", images: ["/opengraph-image"] },
+  twitter: { card: "summary_large_image", title, description },
 };
+
+/**
+ * DRAFT — please review before publishing. (~210 words)
+ */
+const introCopy = `Every photo in this portfolio started the same way: a private, one-on-one conversation about what a client wanted their hair to do for them. Some came in looking to restore density and fullness after thinning or hair loss. Others wanted hand-tied or micro-bead extensions for length and dimension, a full color correction, or simply a cut that finally worked with their natural texture instead of against it. A few were navigating chemotherapy and needed a compassionate, private space to figure out what came next for their hair. Whatever brought them through the door in Cave Creek, the approach stayed the same — understand the hair and the history first, then build a plan around the person in the chair, not a menu of services. That's why these transformations look so different from each other. There's no single "signature style" here, because no two heads of hair, or two clients, are the same. What you'll see below is real client work: color, cuts, extensions, and restoration, photographed as it actually turned out. If something here looks like what you're hoping for — or even just close to it — that's a great place to start a conversation. Call or text to set up a private consultation, and we'll talk through what's realistic for your hair.`;
 
 const gallery = [
   "img_5637_1.jpg",
@@ -66,9 +79,15 @@ export default function PortfolioPage() {
         </div>
       </section>
 
+      <section className="bg-cream-light py-16">
+        <div className="mx-auto max-w-3xl px-6 text-center lg:px-10">
+          <p className="text-ink/70">{introCopy}</p>
+        </div>
+      </section>
+
       <Link
         href="/contact-us"
-        aria-label="Book Now"
+        aria-label="Book an appointment"
         className="block overflow-hidden border-y border-white/10 bg-teal-dark py-4"
       >
         <div className="flex w-max animate-[marquee_18s_linear_infinite] items-center hover:[animation-play-state:paused]">
@@ -93,7 +112,7 @@ export default function PortfolioPage() {
             <div key={file} className="mb-4 break-inside-avoid overflow-hidden rounded-xl">
               <Image
                 src={img(file)}
-                alt=""
+                alt={altFor(file)}
                 width={500}
                 height={650}
                 sizes="(min-width: 1024px) 25vw, 50vw"

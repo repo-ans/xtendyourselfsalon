@@ -14,8 +14,8 @@ export default function ServicesPreview() {
   return (
     <section className="bg-cream-light py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <p className="font-display text-base text-terracotta italic">Beauty Always</p>
-        <p className="mt-1 text-xs font-semibold tracking-[0.3em] text-ink/60 uppercase">
+        <p className="font-display text-base text-teal italic">Beauty Always</p>
+        <p className="mt-1 text-xs font-semibold tracking-[0.3em] text-ink/70 uppercase">
           Services
         </p>
 
@@ -47,7 +47,7 @@ export default function ServicesPreview() {
               <div className="relative aspect-square overflow-hidden rounded-xl">
                 <Image
                   src={img(c.image)}
-                  alt={c.label}
+                  alt=""
                   fill
                   sizes="(min-width: 1024px) 20vw, 40vw"
                   className="object-cover transition group-hover:scale-105"

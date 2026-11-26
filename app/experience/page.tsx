@@ -1,17 +1,28 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata = {
-  title: "What Are You Looking For? | Xtend Yourself",
+const title = "What Are You Looking For? | Xtend Yourself";
+const description =
+  "Call or text to book a consultation for salon services, extensions, or hair restoration at Xtend Yourself in Cave Creek, Arizona.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/experience" },
+  openGraph: { title, description, url: "/experience", type: "website", images: ["/opengraph-image"] },
+  twitter: { card: "summary_large_image", title, description },
 };
 
 const paths = [
   {
     label: "Cuts, Colors & Salon Services",
-    href: "https://xtendyourself.glossgenius.com/services",
+    href: "tel:+14802079996",
+    event: "call_click",
   },
   {
     label: "Extensions & Hair Restoration",
     href: "/contact-us",
+    event: undefined,
   },
 ];
 
@@ -27,8 +38,7 @@ export default function ExperiencePage() {
             <Link
               key={p.label}
               href={p.href}
-              target={p.href.startsWith("http") ? "_blank" : undefined}
-              rel={p.href.startsWith("http") ? "noopener noreferrer" : undefined}
+              data-event={p.event}
               className="rounded-2xl border border-terracotta/30 bg-white px-8 py-10 text-lg font-semibold text-ink shadow-sm transition hover:border-terracotta hover:shadow-md"
             >
               {p.label}

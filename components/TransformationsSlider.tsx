@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { img } from "@/lib/images";
+import { altFor } from "@/lib/altText";
 import "swiper/css";
 
 export default function TransformationsSlider({ images }: { images: string[] }) {
@@ -24,7 +25,7 @@ export default function TransformationsSlider({ images }: { images: string[] }) 
       {images.map((f, i) => (
         <SwiperSlide key={f + i}>
           <div className="relative aspect-[3/4] w-full overflow-hidden">
-            <Image src={img(f)} alt="" fill sizes="200px" className="object-cover" />
+            <Image src={img(f)} alt={altFor(f)} fill sizes="200px" className="object-cover" />
           </div>
         </SwiperSlide>
       ))}

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { img } from "@/lib/images";
@@ -109,7 +110,7 @@ const coreServicesRowTwo: ServiceCardData[] = [
     },
   },
   {
-    title: "Chemo & Hairloss Support",
+    title: "Chemo & Hair Loss Support",
     image: "pexels-deni-priyo-3550015-10028673.jpg",
     text: "Private, compassionate hair and scalp support for those navigating chemotherapy or illness-related hair loss.",
     modal: {
@@ -119,7 +120,7 @@ const coreServicesRowTwo: ServiceCardData[] = [
         "Hair loss can be deeply personal. Niki provides a private, one-on-one space where you can explore supportive options, care for your hair and scalp, and find solutions that help you feel more like yourself throughout treatment and regrowth.",
       ],
       bullets: [
-        "Chemotherapy Hairloss Support",
+        "Chemotherapy Hair Loss Support",
         "Hair & Scalp Support",
         "Hair Restore Enhancement System",
         "Hair Pieces & Integration",
@@ -169,10 +170,16 @@ const steps = [
   },
 ];
 
-export const metadata = {
-  title: "Services | Hair Restoration, Extensions & Color, Cave Creek AZ",
-  description:
-    "Personalized hair restoration, augmentation, and transformation in Cave Creek with a private space created entirely around you.",
+const title = "Services | Hair Restoration, Extensions & Color, Cave Creek AZ";
+const description =
+  "Personalized hair restoration, augmentation, and transformation in Cave Creek with a private space created entirely around you.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/services" },
+  openGraph: { title, description, url: "/services", type: "website", images: ["/opengraph-image"] },
+  twitter: { card: "summary_large_image", title, description },
 };
 
 export default function ServicesPage() {
@@ -185,16 +192,17 @@ export default function ServicesPage() {
           fill
           sizes="100vw"
           className="object-cover"
-          priority
+          fetchPriority="high"
+          loading="eager"
         />
         <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-10">
           <div className="max-w-md">
             <h1 className="flex flex-col">
-              <span className="text-xs font-semibold tracking-[0.3em] text-ink/60 uppercase">
-                More Than a Service.
+              <span className="text-xs font-semibold tracking-[0.3em] text-ink/70 uppercase">
+                More Than a Service.{" "}
               </span>
               <span className="mt-4 font-body text-4xl font-light tracking-wide uppercase sm:text-5xl">
-                A Solution Made
+                A Solution Made{" "}
               </span>
               <span className="font-script text-5xl text-terracotta sm:text-6xl">
                 For You
@@ -208,12 +216,12 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="bg-terracotta py-24 text-center text-white">
+      <section className="bg-terracotta-dark py-24 text-center text-white">
         <div className="mx-auto max-w-3xl px-6 lg:px-10">
           <h2 className="text-3xl font-light tracking-wide uppercase sm:text-4xl">
             Don&rsquo;t Know Where to Start?
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-white/85">
+          <p className="mx-auto mt-4 max-w-xl text-white">
             Every transformation is different. A consultation gives Niki the opportunity
             to understand your hair, your history, and what you want to achieve before
             deciding what comes next.
@@ -225,7 +233,7 @@ export default function ServicesPage() {
                 className="flex flex-col border border-white/50 p-8 text-center"
               >
                 <h3 className="font-display text-xl font-semibold">{c.name}</h3>
-                <p className="mt-4 flex-1 text-sm text-white/85">{c.text}</p>
+                <p className="mt-4 flex-1 text-sm text-white">{c.text}</p>
                 <p className="mt-6 font-semibold text-white uppercase">{c.price}</p>
               </div>
             ))}
@@ -255,20 +263,20 @@ export default function ServicesPage() {
 
           <Link
             href="/portfolio"
-            className="mt-10 inline-block text-sm font-semibold tracking-widest text-ink/60 uppercase hover:text-terracotta"
+            className="mt-10 inline-block text-sm font-semibold tracking-widest text-ink/70 uppercase hover:text-teal-dark"
           >
             View More Transformations
           </Link>
         </div>
       </section>
 
-      <section className="bg-terracotta py-24 text-center text-white">
+      <section className="bg-terracotta-dark py-24 text-center text-white">
         <div className="mx-auto max-w-5xl px-6 lg:px-10">
           <h2 className="text-4xl sm:text-5xl">
             <span className="font-body font-light tracking-wide uppercase">How It</span>{" "}
             <span className="font-display italic">Works</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-sm font-semibold tracking-widest text-white/85 uppercase">
+          <p className="mx-auto mt-4 max-w-xl text-sm font-semibold tracking-widest text-white uppercase">
             Thoughtful from the first conversation to the final result.
           </p>
 

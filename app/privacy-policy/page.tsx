@@ -1,5 +1,15 @@
-export const metadata = {
-  title: "Privacy Policy | Xtend Yourself",
+import type { Metadata } from "next";
+
+const title = "Privacy Policy | Xtend Yourself";
+const description =
+  "How Xtend Yourself Salon collects, uses, and protects information submitted through this website.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/privacy-policy" },
+  openGraph: { title, description, url: "/privacy-policy", type: "website", images: ["/opengraph-image"] },
+  twitter: { card: "summary_large_image", title, description },
 };
 
 const sections = [
@@ -46,7 +56,7 @@ export default function PrivacyPolicyPage() {
     <section className="py-24">
       <div className="mx-auto max-w-3xl px-6 lg:px-10">
         <h1 className="text-4xl font-semibold sm:text-5xl">Privacy Policy</h1>
-        <p className="mt-2 text-sm text-ink/50">Last Updated: September 15, 2026</p>
+        <p className="mt-2 text-sm text-ink/70">Last Updated: September 15, 2026</p>
         <p className="mt-6 text-ink/70">
           Xtend Yourself Salon respects your privacy and is committed to protecting the
           personal information you choose to share with us. This Privacy Policy explains

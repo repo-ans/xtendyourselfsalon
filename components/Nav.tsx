@@ -25,7 +25,8 @@ export default function Nav() {
             width={260}
             height={96}
             className="h-16 w-auto lg:h-20"
-            priority
+            fetchPriority="high"
+            loading="eager"
           />
         </Link>
 
@@ -40,7 +41,8 @@ export default function Nav() {
             </Link>
           ))}
           <a
-            href="tel:4802079996"
+            href="tel:+14802079996"
+            data-event="call_click"
             className="rounded-full bg-teal px-5 py-2.5 text-xs font-semibold tracking-wide text-white uppercase hover:bg-teal-dark"
           >
             Book Your Appointment
@@ -50,10 +52,18 @@ export default function Nav() {
         <button
           type="button"
           aria-label="Toggle menu"
+          aria-expanded={open}
           className="flex h-10 w-10 items-center justify-center lg:hidden"
           onClick={() => setOpen((v) => !v)}
         >
-          <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor">
+          <svg
+            viewBox="0 0 24 24"
+            className="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            aria-hidden="true"
+            focusable="false"
+          >
             {open ? (
               <path strokeWidth={2} strokeLinecap="round" d="M6 6l12 12M18 6L6 18" />
             ) : (
@@ -76,7 +86,8 @@ export default function Nav() {
             </Link>
           ))}
           <a
-            href="tel:4802079996"
+            href="tel:+14802079996"
+            data-event="call_click"
             onClick={() => setOpen(false)}
             className="mt-2 rounded-full bg-teal px-6 py-3 text-center text-sm font-semibold tracking-wide text-white uppercase"
           >

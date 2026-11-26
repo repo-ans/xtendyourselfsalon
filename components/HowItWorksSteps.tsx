@@ -19,13 +19,13 @@ export default function HowItWorksSteps({ steps }: { steps: Step[] }) {
       {steps.map((s, i) => (
         <div
           key={s.n}
-          className={`flex h-44 w-44 flex-col items-center justify-center rounded-full border border-white/50 p-6 text-center transition-colors duration-700 sm:h-48 sm:w-48 ${
-            i === active ? "bg-white/15" : ""
+          className={`flex h-44 w-44 flex-col items-center justify-center rounded-full border-2 p-6 text-center transition-all duration-700 sm:h-48 sm:w-48 ${
+            i === active ? "scale-105 border-white" : "border-white/50"
           }`}
         >
           <span className="text-xs font-semibold tracking-widest">{s.n}</span>
           <h3 className="mt-2 text-xs font-semibold tracking-wide uppercase">{s.title}</h3>
-          <p className="mt-2 text-[0.65rem] leading-tight text-white/80">{s.text}</p>
+          <p className="mt-2 text-[0.65rem] leading-tight text-white">{s.text}</p>
         </div>
       ))}
     </div>

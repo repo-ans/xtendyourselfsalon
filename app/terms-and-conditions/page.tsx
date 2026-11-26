@@ -1,5 +1,15 @@
-export const metadata = {
-  title: "Terms & Conditions | Xtend Yourself",
+import type { Metadata } from "next";
+
+const title = "Terms & Conditions | Xtend Yourself";
+const description =
+  "Terms and conditions for using the Xtend Yourself Salon website and booking a consultation or appointment.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/terms-and-conditions" },
+  openGraph: { title, description, url: "/terms-and-conditions", type: "website", images: ["/opengraph-image"] },
+  twitter: { card: "summary_large_image", title, description },
 };
 
 const sections = [
@@ -70,7 +80,7 @@ export default function TermsPage() {
     <section className="py-24">
       <div className="mx-auto max-w-3xl px-6 lg:px-10">
         <h1 className="text-4xl font-semibold sm:text-5xl">Terms &amp; Conditions</h1>
-        <p className="mt-2 text-sm text-ink/50">Last Updated: September 15, 2026</p>
+        <p className="mt-2 text-sm text-ink/70">Last Updated: September 15, 2026</p>
         <p className="mt-6 text-ink/70">
           Welcome to the Xtend Yourself Salon website. By accessing or using this website,
           you agree to the following Terms &amp; Conditions. These terms apply to your use

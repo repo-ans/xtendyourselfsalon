@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect } from "react";
 import { X } from "lucide-react";
+import { altFor } from "@/lib/altText";
 
 export type ServiceModalContent = {
   title: string;
@@ -53,7 +54,13 @@ export default function ServiceModal({
 
         <div className="grid gap-8 p-8 sm:grid-cols-2 sm:p-10">
           <div className="relative h-72 w-full overflow-hidden sm:h-full">
-            <Image src={content.image} alt={content.title} fill sizes="(min-width: 640px) 40vw, 100vw" className="object-cover" />
+            <Image
+              src={content.image}
+              alt={altFor(content.image, content.title)}
+              fill
+              sizes="(min-width: 640px) 40vw, 100vw"
+              className="object-cover"
+            />
           </div>
 
           <div>

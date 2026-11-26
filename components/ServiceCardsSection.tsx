@@ -18,7 +18,7 @@ function Card({ data, onLearnMore }: { data: ServiceCardData; onLearnMore: () =>
       <div className="relative h-48 w-full">
         <Image
           src={img(data.image)}
-          alt={data.title}
+          alt=""
           fill
           sizes="(min-width: 1024px) 33vw, 100vw"
           className="object-cover"
@@ -30,7 +30,7 @@ function Card({ data, onLearnMore }: { data: ServiceCardData; onLearnMore: () =>
         <button
           type="button"
           onClick={onLearnMore}
-          className="mt-6 block rounded-full bg-terracotta px-6 py-3 text-xs font-semibold tracking-widest text-white uppercase hover:bg-terracotta-dark"
+          className="mt-6 block rounded-full bg-terracotta-dark px-6 py-3 text-xs font-semibold tracking-widest text-white uppercase hover:opacity-90"
         >
           Learn More
         </button>
