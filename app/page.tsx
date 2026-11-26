@@ -46,12 +46,12 @@ export default function HomePage() {
               thinning hair, added density, extensions, color, and complete hair
               transformations.
             </p>
-            <Link
-              href="/contact-us"
+            <a
+              href="tel:4802079996"
               className="mt-8 inline-block rounded-full bg-teal px-8 py-4 text-sm font-semibold tracking-widest text-white uppercase hover:bg-teal-dark"
             >
               Book Your Appointment
-            </Link>
+            </a>
           </div>
         </div>
 

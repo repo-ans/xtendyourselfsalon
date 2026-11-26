@@ -72,9 +72,9 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-3 gap-2 sm:gap-3">
             {galleryShots.map((f) => (
-              <div key={f} className="relative aspect-[3/4] overflow-hidden rounded-lg">
+              <div key={f} className="relative aspect-[3/4] overflow-hidden">
                 <Image src={img(f)} alt="" fill sizes="(min-width: 1024px) 24vw, 33vw" className="object-cover" />
               </div>
             ))}
@@ -82,17 +82,15 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="bg-teal-dark text-cream-light">
+      <div className="bg-[#2c6c69] text-cream-light">
         <div className="mx-auto flex max-w-7xl flex-col flex-wrap items-center justify-between gap-6 px-6 py-8 lg:flex-row lg:px-10">
-          <div className="rounded-lg bg-cream px-3 py-2">
-            <Image
-              src={img("xtend-yourself-logo-black-on-white-bg.png")}
-              alt="Xtend Yourself"
-              width={170}
-              height={62}
-              className="h-12 w-auto"
-            />
-          </div>
+          <Image
+            src={img("chatgpt_image_sep_15_2026_10_35_10_am.png")}
+            alt="Xtend Yourself"
+            width={170}
+            height={62}
+            className="h-12 w-auto"
+          />
 
           <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 sm:gap-x-10">
             {quickLinks.map((l) => (
@@ -106,7 +104,7 @@ export default function Footer() {
             ))}
           </nav>
 
-          <div className="border-l border-white/20 pl-6 text-lg">
+          <div className="border-l border-white/20 pl-6 text-sm tracking-wide uppercase">
             <p>Cave Creek, AZ</p>
             <p>By Appointment Only</p>
           </div>

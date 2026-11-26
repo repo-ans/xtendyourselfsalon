@@ -17,19 +17,19 @@ export default function Nav() {
 
   return (
     <header className="sticky top-0 z-50 h-[84px] bg-cream">
-      <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-6 lg:px-10">
+      <div className="flex h-full w-full items-center justify-between px-5 lg:px-12">
         <Link href="/" className="shrink-0" onClick={() => setOpen(false)}>
           <Image
             src={img("xtend-yourself-logo-black-on-white-bg.png")}
             alt="Xtend Yourself"
-            width={230}
-            height={84}
-            className="h-14 w-auto lg:h-[4.25rem]"
+            width={260}
+            height={96}
+            className="h-16 w-auto lg:h-20"
             priority
           />
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden items-center gap-7 lg:flex">
           {links.map((l) => (
             <Link
               key={l.href}
@@ -39,12 +39,12 @@ export default function Nav() {
               {l.label}
             </Link>
           ))}
-          <Link
-            href="/contact-us"
-            className="rounded-full bg-teal px-6 py-3 text-sm font-semibold tracking-wide text-white uppercase hover:bg-teal-dark"
+          <a
+            href="tel:4802079996"
+            className="rounded-full bg-teal px-5 py-2.5 text-xs font-semibold tracking-wide text-white uppercase hover:bg-teal-dark"
           >
             Book Your Appointment
-          </Link>
+          </a>
         </nav>
 
         <button
@@ -75,13 +75,13 @@ export default function Nav() {
               {l.label}
             </Link>
           ))}
-          <Link
-            href="/contact-us"
+          <a
+            href="tel:4802079996"
             onClick={() => setOpen(false)}
             className="mt-2 rounded-full bg-teal px-6 py-3 text-center text-sm font-semibold tracking-wide text-white uppercase"
           >
             Book Your Appointment
-          </Link>
+          </a>
         </nav>
       )}
     </header>

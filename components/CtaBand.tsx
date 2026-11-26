@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { img } from "@/lib/images";
 
 export default function CtaBand() {
@@ -12,21 +11,21 @@ export default function CtaBand() {
         sizes="100vw"
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-terracotta-dark/40" />
+      <div className="absolute inset-0 bg-terracotta/30" />
       <div className="relative mx-auto max-w-3xl px-6">
-        <p className="text-sm font-semibold tracking-[0.3em] uppercase">
+        <p className="text-sm font-light tracking-[0.3em] uppercase">
           Ready to Xtend Yourself?
         </p>
-        <h2 className="mt-4 text-5xl font-semibold tracking-wide uppercase sm:text-6xl lg:text-7xl">
+        <h2 className="mt-4 font-body text-3xl font-light tracking-wide whitespace-nowrap uppercase sm:text-6xl lg:text-7xl">
           Let&rsquo;s Create Your
         </h2>
         <p className="font-script text-5xl sm:text-6xl lg:text-7xl">Next Chapter.</p>
-        <Link
-          href="/contact-us"
+        <a
+          href="tel:4802079996"
           className="mt-10 inline-block rounded-full bg-teal px-8 py-4 text-sm font-semibold tracking-widest text-white uppercase hover:bg-teal-dark"
         >
           Book Your Appointment
-        </Link>
+        </a>
       </div>
     </section>
   );

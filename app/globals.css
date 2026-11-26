@@ -28,9 +28,20 @@ body {
   color: var(--foreground);
 }
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: var(--font-display);
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }

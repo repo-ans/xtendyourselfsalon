@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { img } from "@/lib/images";
 import ServicesPreview from "@/components/ServicesPreview";
 import CtaBand from "@/components/CtaBand";
@@ -64,6 +65,27 @@ export default function PortfolioPage() {
           </p>
         </div>
       </section>
+
+      <Link
+        href="/contact-us"
+        aria-label="Book Now"
+        className="block overflow-hidden border-y border-white/10 bg-teal-dark py-4"
+      >
+        <div className="flex w-max animate-[marquee_18s_linear_infinite] items-center hover:[animation-play-state:paused]">
+          {Array.from({ length: 2 }).map((_, groupIndex) => (
+            <div key={groupIndex} className="flex shrink-0 items-center" aria-hidden={groupIndex === 1}>
+              {Array.from({ length: 8 }).map((_, i) => (
+                <span
+                  key={i}
+                  className="px-6 font-display text-4xl text-white/70 uppercase italic"
+                >
+                  Book Now <span className="not-italic text-white/30">/</span>
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </Link>
 
       <section className="py-16">
         <div className="mx-auto max-w-7xl columns-2 gap-4 px-6 sm:columns-3 lg:columns-4 lg:px-10">
